@@ -1,0 +1,17 @@
+{
+    "name": "csci-5229-project",
+    "version": "0.1",
+    "scripts": {
+        "watch": "webpack --mode development --watch",
+        "build": "webpack",
+        "serve": "node server.js 8080"
+    },
+    "devDependencies": {
+        "gl-matrix": "^3.4.3",
+        "mtl-file-parser": "^0.3.0",
+        "obj-file-parser": "^0.6.2",
+        "raw-loader": "^4.0.2",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4"
+    }
+}
