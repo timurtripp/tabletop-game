@@ -1,5 +1,7 @@
 # Tabletop Game – Tim Tripp CSCI 5229 Final Project
 
+**Demo: [https://timurtripp.com/webgl](https://timurtripp.com/webgl)**
+
 The tabletop game setup consists of metalic colored dice sets (d20, d12, d10, d8, d6, d4), and a battle map with player &amp; NPC tokens, all randomly distributed. The scene is rendered using pure WebGL and custom shaders.
 
 Asset credits:
