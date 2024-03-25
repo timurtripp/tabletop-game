@@ -22,8 +22,6 @@ jobs:
           cp index.html _site
           cp -R texture _site
           cp icon.png _site
-          mkdir _site/.github
-          cp -R .github/_workflows _site/.github
       - name: Deploy website
         uses: cpina/github-action-push-to-another-repository@main
         env:
