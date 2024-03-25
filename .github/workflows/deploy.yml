@@ -1,12 +1,20 @@
-name: Deploy website to GitHub Pages
+name: Build and deploy
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
-  deploy:
+  build-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push Docker image
+        uses: VaultVulp/gp-docker-action@1.6.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          image-name: tabletop-game
+          image-tag: latest
+  deploy-githib-pages:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -23,7 +31,7 @@ jobs:
           cp -R dist _site
           cp index.html _site
           cp -R texture _site
-          cp icon.png
+          cp icon.png _site
           mkdir _site/.github
           cp -R .github/_workflows _site/.github
       - name: Deploy website
