@@ -2,7 +2,7 @@
 
 <img src="icon.png" alt="Red D20 resting on a wood surface and casting a shadow">
 
-**Deployed at [https://tabletop-game.silvercrater.dev](https://tabletop-game.silvercrater.dev)**
+**Deployed at [https://tabletop-game.timurtripp.com](https://tabletop-game.timurtripp.com)**
 
 The tabletop game setup consists of metalic colored dice sets (d20, d12, d10, d8, d6, d4), and a battle map with player &amp; NPC tokens, all randomly distributed. The scene is rendered using pure WebGL and custom shaders.
 

@@ -1,0 +1,37 @@
+name: Deploy website to GitHub Pages
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["main"]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 18.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Copy files intended for the destination repo
+        run: |
+          mkdir _site
+          cp -R dist _site
+          cp index.html _site
+          cp -R texture _site
+          cp icon.png
+          mkdir _site/.github
+          cp -R .github/_workflows _site/.github
+      - name: Deploy website
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source-directory: _site/
+          destination-github-username: TimurTripp-com
+          destination-repository-name: tabletop-game-timurtripp-com.github.io
+          target-branch: main
