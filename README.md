@@ -1,6 +1,8 @@
 # Tabletop Game – Tim Tripp CSCI 5229 Final Project
 
-**Demo: [https://timurtripp.com/webgl](https://timurtripp.com/webgl)**
+<img src="icon.png" alt="Red D20 resting on a wood surface and casting a shadow">
+
+**Deployed at [https://tabletop-game.silvercrater.dev](https://tabletop-game.silvercrater.dev)**
 
 The tabletop game setup consists of metalic colored dice sets (d20, d12, d10, d8, d6, d4), and a battle map with player &amp; NPC tokens, all randomly distributed. The scene is rendered using pure WebGL and custom shaders.
 
@@ -21,6 +23,9 @@ This repository includes a simple web server implementation to overcome the issu
 
 ## Development
 The project builds using [Webpack](https://webpack.js.org). Install all required dependencies with `npm i` and watch using `npm run watch` or build using `npm run build`. The built script is created as `dist/main.js`. These steps are **not** required if simply wanting to run the project and `dist/main.js` already exists – ignore this section and refer to the one above.
+
+## Deployment
+The recommended method of deployment is Docker. Use `docker build .` to build a Docker image.
 
 ## Known issues
 - All the dice are showing the same number, they should be random. Estimated fix difficulty: hard (rotation is difficult to get right for a face, and with the d20 there are 20 such face rotations, 12 with the d12, and so on).
