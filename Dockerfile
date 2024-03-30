@@ -4,7 +4,7 @@ COPY package.json /usr/app
 COPY webpack.config.js /usr/app
 COPY src /usr/app/src
 COPY asset /usr/app/asset
-RUN npm install
+RUN npm ci
 RUN npm run build
 
 FROM nginx:alpine
