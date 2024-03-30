@@ -268,7 +268,7 @@ export default class Scene {
     gl.activeTexture(gl.TEXTURE0);
     gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
     texture.empty = createEmptyTexture(gl, 255, 255, 255);
-    texture.npcToken = loadTextureImage(gl, textureURL + 'wood.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 255, 255, 255), onTextureLoad);
+    texture.npcToken = loadTextureImage(gl, textureURL + 'wood.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 245, 177, 107), onTextureLoad);
 
     material.default = new SimpleMaterial(gl);
     material.walls = new SimpleMaterial(gl, [1.5, 1.5, 1.5], [3, 3, 3], [1, 1, 1], 0);
@@ -277,9 +277,9 @@ export default class Scene {
     material.npcToken = new SimpleMaterial(gl, [0.5, 0.5, 0.5], [0.75, 0.75, 0.75], [1, 1, 1], 0);
 
     let m = mat4.create(), m2 = mat4.create(), texCoordTransform = mat3.create();
-    asset.ceiling = new Asset({ 'v': cubeData['v'], 'vn': cubeData['vn'], 'vt': cubeData['vt'], 'f': [cubeData['f'][5]] }, gl,  loadTextureImage(gl, textureURL + 'ceiling.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 255, 255, 255), onTextureLoad), mat4.fromScaling(m, [40, 30, 50]), mat3.fromScaling(texCoordTransform, [4, 4 * 1.66667]), true);
-    asset.walls = new Asset({ 'v': cubeData['v'], 'vn': cubeData['vn'], 'vt': cubeData['vt'], 'f': [cubeData['f'][0], cubeData['f'][1], cubeData['f'][2], cubeData['f'][3]] }, gl,  loadTextureImage(gl, textureURL + 'walls.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 255, 255, 255), onTextureLoad), m, mat3.fromScaling(texCoordTransform, [2, 2 * 1.66667]), true);
-    asset.floor = new Asset({ 'v': cubeData['v'], 'vn': cubeData['vn'], 'vt': cubeData['vt'], 'f': [cubeData['f'][4]] }, gl, loadTextureImage(gl, textureURL + 'floor.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 255, 255, 255), onTextureLoad), m, mat3.fromScaling(texCoordTransform, [4, 4 * 1.66667]), true);
+    asset.ceiling = new Asset({ 'v': cubeData['v'], 'vn': cubeData['vn'], 'vt': cubeData['vt'], 'f': [cubeData['f'][5]] }, gl,  loadTextureImage(gl, textureURL + 'ceiling.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 201, 194, 178), onTextureLoad), mat4.fromScaling(m, [40, 30, 50]), mat3.fromScaling(texCoordTransform, [4, 4 * 1.66667]), true);
+    asset.walls = new Asset({ 'v': cubeData['v'], 'vn': cubeData['vn'], 'vt': cubeData['vt'], 'f': [cubeData['f'][0], cubeData['f'][1], cubeData['f'][2], cubeData['f'][3]] }, gl,  loadTextureImage(gl, textureURL + 'walls.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 198, 198, 198), onTextureLoad), m, mat3.fromScaling(texCoordTransform, [2, 2 * 1.66667]), true);
+    asset.floor = new Asset({ 'v': cubeData['v'], 'vn': cubeData['vn'], 'vt': cubeData['vt'], 'f': [cubeData['f'][4]] }, gl, loadTextureImage(gl, textureURL + 'floor.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 148, 89, 45), onTextureLoad), m, mat3.fromScaling(texCoordTransform, [4, 4 * 1.66667]), true);
 
     // Sets up the assets.
     asset.table = new Asset(tableData, gl, loadTextureImage(gl, textureURL + 'table-composite.jpg', TEX_INTERPOLATION_LINEAR, createEmptyTexture(gl, 194, 159, 121), onTextureLoad), mat4.rotateY(m, mat4ScaleUniform(mat4.fromTranslation(m, [0, -10.3, 0]), 0.1), RADIANS_90));

@@ -33,6 +33,7 @@ function startServer(serverPort){
           response.end(data);
         });
       break;
+      case '/icon.png':
       case '/texture/d20.png':
       case '/texture/d12.png':
       case '/texture/d10.png':
