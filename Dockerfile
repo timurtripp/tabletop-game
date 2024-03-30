@@ -1,6 +1,7 @@
 FROM node:alpine as node
 WORKDIR /usr/app
 COPY package.json /usr/app
+COPY package-lock.json /usr/app
 COPY webpack.config.js /usr/app
 COPY src /usr/app/src
 COPY asset /usr/app/asset
